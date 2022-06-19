@@ -5,13 +5,13 @@
 class Dns53 < Formula
   desc "Dynamic DNS within Amazon Route53. Expose your EC2 quickly, easily and privately"
   homepage "https://github.com/purpleclay/dns53"
-  version "0.1.0-beta.1"
+  version "0.1.0-beta.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/purpleclay/dns53/releases/download/v0.1.0-beta.1/dns53_0.1.0-beta.1_darwin-arm64.tar.gz"
-      sha256 "2935fc1d37712960224c6a2185c326c51bff244d0175235c94cd436102c8b022"
+      url "https://github.com/purpleclay/dns53/releases/download/v0.1.0-beta.2/dns53_0.1.0-beta.2_darwin-arm64.tar.gz"
+      sha256 "dc1521b1f81b7f4bb46cce6a6c13bd9e6e68a2df2979222d5e8c8cf9de0c184b"
 
       def install
         bin.install "dns53"
@@ -29,8 +29,8 @@ class Dns53 < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/dns53/releases/download/v0.1.0-beta.1/dns53_0.1.0-beta.1_darwin-x86_64.tar.gz"
-      sha256 "ac1ed7e0ac15ab4f6096d8350944c37072647d1c92ebe5271c36ca3323f208fb"
+      url "https://github.com/purpleclay/dns53/releases/download/v0.1.0-beta.2/dns53_0.1.0-beta.2_darwin-x86_64.tar.gz"
+      sha256 "ff09da9ab69341de908b7643b1c5c4b5504e779cda84eeccaa9a367ec6c3e592"
 
       def install
         bin.install "dns53"
@@ -50,9 +50,9 @@ class Dns53 < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/dns53/releases/download/v0.1.0-beta.1/dns53_0.1.0-beta.1_linux-x86_64.tar.gz"
-      sha256 "d06497eef5227ea2ac5c53cbe625230c334804cff9e0ad13f6602bae365cb80d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/purpleclay/dns53/releases/download/v0.1.0-beta.2/dns53_0.1.0-beta.2_linux-arm64.tar.gz"
+      sha256 "93274d6c473726272b734ad8e79b42ce95549544e2c9aef84a8cab577866ef77"
 
       def install
         bin.install "dns53"
@@ -69,9 +69,9 @@ class Dns53 < Formula
         man1.install "manpages/dns53.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/purpleclay/dns53/releases/download/v0.1.0-beta.1/dns53_0.1.0-beta.1_linux-arm64.tar.gz"
-      sha256 "029a3bd55d10a0dad14cf524321081ef5585a1ef2623a6dea33621ec455d13a1"
+    if Hardware::CPU.intel?
+      url "https://github.com/purpleclay/dns53/releases/download/v0.1.0-beta.2/dns53_0.1.0-beta.2_linux-x86_64.tar.gz"
+      sha256 "e7628d84b843d59883e29ddd94eb9797dde138d69e05cbeebc429742f7e4e5ae"
 
       def install
         bin.install "dns53"
