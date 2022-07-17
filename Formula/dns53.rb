@@ -11,7 +11,7 @@ class Dns53 < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/purpleclay/dns53/releases/download/v0.4.0/dns53_0.4.0_darwin-x86_64.tar.gz"
-      sha256 "7b322320156544d4c68343b9512650a27da785e4b63f31c9daff5b7d70c7f681"
+      sha256 "437e87e96236f7161c1e317d2d27bf6e41e40422f839fb1e6a3f80b17020a70b"
 
       def install
         bin.install "dns53"
@@ -30,7 +30,7 @@ class Dns53 < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/purpleclay/dns53/releases/download/v0.4.0/dns53_0.4.0_darwin-arm64.tar.gz"
-      sha256 "fd45d918fc3987d3a52442d7b4de231ba9ee0f701a47c08b4c39501286e39987"
+      sha256 "af0e72f618c7d996baceb8e85801606c2968af605a5c722809444360d517b56d"
 
       def install
         bin.install "dns53"
@@ -52,7 +52,7 @@ class Dns53 < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/purpleclay/dns53/releases/download/v0.4.0/dns53_0.4.0_linux-arm64.tar.gz"
-      sha256 "92e270364f82505c15797cd47900660b6ace71196fe2e0093e5368dbcce56993"
+      sha256 "36229f167057dd6568ce459f5d8b33d63eb37368bb8b85c56d4d77b37a2303a3"
 
       def install
         bin.install "dns53"
@@ -71,7 +71,7 @@ class Dns53 < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/purpleclay/dns53/releases/download/v0.4.0/dns53_0.4.0_linux-x86_64.tar.gz"
-      sha256 "caf4938b02784e1c7d5b20081f4b13d2eb987ec23dceb51b08ddb33f0e4f2ced"
+      sha256 "ef75b234991bd1ac291b5bb8b0edf08a5c5fee606193f804d7885101f9898ede"
 
       def install
         bin.install "dns53"
