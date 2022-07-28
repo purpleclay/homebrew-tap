@@ -5,13 +5,13 @@
 class MisspellCodeclimate < Formula
   desc "Turn that misspell report into a GitLab compatible codeclimate report"
   homepage "https://github.com/purpleclay/misspell-codeclimate"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/misspell-codeclimate/releases/download/v0.1.0/misspell-codeclimate_0.1.0_darwin-x86_64.tar.gz"
-      sha256 "0cdf553f38915668b58646080eb66395b1b6a0723034a98e485c3e2e196237c0"
+      url "https://github.com/purpleclay/misspell-codeclimate/releases/download/v0.2.0/misspell-codeclimate_0.2.0_darwin-x86_64.tar.gz"
+      sha256 "4e36f4da5429b4828e1890931752d863f7064975cbca3d51916499646d26cea2"
 
       def install
         bin.install "misspell-codeclimate"
@@ -29,8 +29,8 @@ class MisspellCodeclimate < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/purpleclay/misspell-codeclimate/releases/download/v0.1.0/misspell-codeclimate_0.1.0_darwin-arm64.tar.gz"
-      sha256 "9ac4d78e64ee41fa38e40d41209be8b7307faa47e742b5fc834d9e28f664d16d"
+      url "https://github.com/purpleclay/misspell-codeclimate/releases/download/v0.2.0/misspell-codeclimate_0.2.0_darwin-arm64.tar.gz"
+      sha256 "d9b09a398ac31c7a995d1c1996132c219843929a53ccd824a65cbf67f8c90b79"
 
       def install
         bin.install "misspell-codeclimate"
@@ -50,9 +50,9 @@ class MisspellCodeclimate < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/misspell-codeclimate/releases/download/v0.1.0/misspell-codeclimate_0.1.0_linux-x86_64.tar.gz"
-      sha256 "285382a1d07bcd077a01e0f217c96033236a9adccd843d8049409d97f75d5da3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/purpleclay/misspell-codeclimate/releases/download/v0.2.0/misspell-codeclimate_0.2.0_linux-arm64.tar.gz"
+      sha256 "a93e2520fdca3b79961bdebc54befcf4573b79a1d908c20cd7957bf8fc7f2c84"
 
       def install
         bin.install "misspell-codeclimate"
@@ -69,9 +69,9 @@ class MisspellCodeclimate < Formula
         man1.install "manpages/misspell-codeclimate.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/purpleclay/misspell-codeclimate/releases/download/v0.1.0/misspell-codeclimate_0.1.0_linux-arm64.tar.gz"
-      sha256 "4efa9aef34fd8bf8b40d680a0f114e9c8d0248570ae9aa0a35f2f7c6d6859cd8"
+    if Hardware::CPU.intel?
+      url "https://github.com/purpleclay/misspell-codeclimate/releases/download/v0.2.0/misspell-codeclimate_0.2.0_linux-x86_64.tar.gz"
+      sha256 "c0f42ac4017a979d99c0d8e63f7cb054b8942e5bb1094aee258e45d4e6750835"
 
       def install
         bin.install "misspell-codeclimate"
