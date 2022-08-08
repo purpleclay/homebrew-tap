@@ -9,9 +9,9 @@ class ImdsMock < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.1.0/imds-mock_0.1.0_darwin-x86_64.tar.gz"
-      sha256 "57ee1fcca1edf329c8ac5ff212333c6a8cd5b5b90f24a9872cdae16f192806c2"
+    if Hardware::CPU.arm?
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.1.0/imds-mock_0.1.0_darwin-arm64.tar.gz"
+      sha256 "a19fa2f24f5a816423ea69b0c00836230ab8eda2184c50f454ad67eaaf842769"
 
       def install
         bin.install "imds-mock"
@@ -28,9 +28,9 @@ class ImdsMock < Formula
         man1.install "manpages/imds-mock.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.1.0/imds-mock_0.1.0_darwin-arm64.tar.gz"
-      sha256 "cfe710ff50b0b93c9fd0c913589b38ce27dc6e89fd412c303e9668528903a5c8"
+    if Hardware::CPU.intel?
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.1.0/imds-mock_0.1.0_darwin-x86_64.tar.gz"
+      sha256 "a2249629b4c62cadd1a636ada3f2d30b5cb9dd18a5983ee680d108d927ac5ec6"
 
       def install
         bin.install "imds-mock"
@@ -50,9 +50,9 @@ class ImdsMock < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.1.0/imds-mock_0.1.0_linux-arm64.tar.gz"
-      sha256 "db383b6918e35b232f95129f94c75a4f7714e0ef5926f820c9900c1e1b95a4bd"
+    if Hardware::CPU.intel?
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.1.0/imds-mock_0.1.0_linux-x86_64.tar.gz"
+      sha256 "ee0df9a056a7c0169c91a6e797f70883ec84a96622efd504400439934b2147ba"
 
       def install
         bin.install "imds-mock"
@@ -69,9 +69,9 @@ class ImdsMock < Formula
         man1.install "manpages/imds-mock.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.1.0/imds-mock_0.1.0_linux-x86_64.tar.gz"
-      sha256 "b27660b75ec6901d7b7bbe55ba5b5194d9c92efb88a155a3e48fb247fde03ba0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.1.0/imds-mock_0.1.0_linux-arm64.tar.gz"
+      sha256 "ab417c33a4ba17df2be00e0bae780fb7d8b0660ad83f748cfccf9ed9f0ffe091"
 
       def install
         bin.install "imds-mock"
