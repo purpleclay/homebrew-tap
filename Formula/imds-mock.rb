@@ -11,7 +11,7 @@ class ImdsMock < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_darwin-x86_64.tar.gz"
-      sha256 "04cd9ad75485dd55d8268567615a84732fc8fdd7b2ca54b993a83f8178cf561c"
+      sha256 "fc498e845adc1fa3e4b728f98da12f64ca4fe6410503663e3fcec23fcc9d56ef"
 
       def install
         bin.install "imds-mock"
@@ -30,7 +30,7 @@ class ImdsMock < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_darwin-arm64.tar.gz"
-      sha256 "e7f1734e1e3c1b4d8d8f224ab898a11f10c0078f22ab80c2ccb4f9892291d545"
+      sha256 "1cb93535bc05a63144c7784c4641677bed0dc823d597310faa7c49613bfbd78d"
 
       def install
         bin.install "imds-mock"
@@ -50,9 +50,9 @@ class ImdsMock < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_linux-x86_64.tar.gz"
-      sha256 "f4d7f5d6189e8a8b147a237a400a44481e9de1b14b881ae3254d937452b69f33"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_linux-arm64.tar.gz"
+      sha256 "e3da839bf5a43eb9789d6927af902d104cc4efc16e2c4be761382151d9d818c8"
 
       def install
         bin.install "imds-mock"
@@ -69,9 +69,9 @@ class ImdsMock < Formula
         man1.install "manpages/imds-mock.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_linux-arm64.tar.gz"
-      sha256 "e479f9e2631e08ee50820d986e1a7ec3b41fd976d048d29d7aee13ea2eeb3fd6"
+    if Hardware::CPU.intel?
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_linux-x86_64.tar.gz"
+      sha256 "c77d7e4a68b1144913e038bd4946f5266faf5182a1f15f045893bfd84829dbe9"
 
       def install
         bin.install "imds-mock"
