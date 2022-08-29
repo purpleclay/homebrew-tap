@@ -5,13 +5,13 @@
 class ImdsMock < Formula
   desc "Easy mocking of the Amazon EC2 Instance Metadata Service (IMDS)"
   homepage "https://github.com/purpleclay/imds-mock"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_darwin-x86_64.tar.gz"
-      sha256 "cc3072bce0b0d39bcae61624be2d6e0726ecb816f89ba8a49243e15df73cae48"
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.1/imds-mock_0.3.1_darwin-x86_64.tar.gz"
+      sha256 "1d68103f0113c5e2ff008f6631ec6720165f8fbe86c7f36e94a3afa999d50399"
 
       def install
         bin.install "imds-mock"
@@ -29,8 +29,8 @@ class ImdsMock < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_darwin-arm64.tar.gz"
-      sha256 "445b7a8d79ff8f5983b381e3bbb31e694cbb79b6caf5c413c219330e4be1b1c9"
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.1/imds-mock_0.3.1_darwin-arm64.tar.gz"
+      sha256 "72dcdd1b2dcfd835ead9bd6d03e602a40003a6a45f1a9f06d5836b89b8ac139e"
 
       def install
         bin.install "imds-mock"
@@ -51,8 +51,8 @@ class ImdsMock < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_linux-arm64.tar.gz"
-      sha256 "13aaec775ee002f5531ea901e94cccbef119e16db0c8fc7c36db033a47aceda9"
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.1/imds-mock_0.3.1_linux-arm64.tar.gz"
+      sha256 "16a3018238b78a394ca85a9ead2b0f78ab8ab36fe850bc5e18778def4bbc6b37"
 
       def install
         bin.install "imds-mock"
@@ -70,8 +70,8 @@ class ImdsMock < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.0/imds-mock_0.3.0_linux-x86_64.tar.gz"
-      sha256 "daeda6a580ef39001697bdc0970f1f979c3ebbcde6cce7260024057fa3a7d6e8"
+      url "https://github.com/purpleclay/imds-mock/releases/download/v0.3.1/imds-mock_0.3.1_linux-x86_64.tar.gz"
+      sha256 "e15e9c3856d882012908f17404176bcc9ba634f00128d67cbd99ea77c4a7542d"
 
       def install
         bin.install "imds-mock"
