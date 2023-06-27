@@ -11,7 +11,7 @@ class Nsv < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/purpleclay/nsv/releases/download/v0.2.0/nsv_0.2.0_darwin_x86_64.tar.gz"
-      sha256 "1c884e1cd9fe65bc9e9b404d4c737a8d19dcd8c076aa66b85d3041905f2f95c6"
+      sha256 "5649279cd648f65d60584fdac2939be29f332b254005f2857a20fc47edfa557f"
 
       def install
         bin.install "nsv"
@@ -30,7 +30,7 @@ class Nsv < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/purpleclay/nsv/releases/download/v0.2.0/nsv_0.2.0_darwin_arm64.tar.gz"
-      sha256 "7eeccd474ef248dd04c35c7eb75afc5fafb020e0ba173bd6c5b5ca888c536fd0"
+      sha256 "77727c5ceed484bca03aa1aa454d4cc5d1e83cdfd738e45645ea47f1efe8e512"
 
       def install
         bin.install "nsv"
@@ -50,9 +50,9 @@ class Nsv < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/nsv/releases/download/v0.2.0/nsv_0.2.0_linux_x86_64.tar.gz"
-      sha256 "7b243e0c33bb21566f1e00ecdc970e7dcda4e086e0ae2b6ae956b64a6e7b06eb"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/purpleclay/nsv/releases/download/v0.2.0/nsv_0.2.0_linux_arm64.tar.gz"
+      sha256 "93e04b857a425f463e58b793ee026f386ab24e215512aae348dcdb478bdeafa2"
 
       def install
         bin.install "nsv"
@@ -69,9 +69,9 @@ class Nsv < Formula
         man1.install "manpages/nsv.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/purpleclay/nsv/releases/download/v0.2.0/nsv_0.2.0_linux_arm64.tar.gz"
-      sha256 "9919d7de89c2fc1a31eaf2c47caf2836bbe728b5fd8c86d5615470e94fa7569e"
+    if Hardware::CPU.intel?
+      url "https://github.com/purpleclay/nsv/releases/download/v0.2.0/nsv_0.2.0_linux_x86_64.tar.gz"
+      sha256 "b236e2eb2dc7d589ebbb37fe9bff9c910f9c2fd907145e81cf981c63a9fe43d4"
 
       def install
         bin.install "nsv"
