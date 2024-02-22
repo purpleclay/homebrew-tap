@@ -5,13 +5,13 @@
 class Nsv < Formula
   desc "A convention-based semantic versioning tool that leans on the power of conventional commits to make versioning your software a breeze!"
   homepage "https://github.com/purpleclay/nsv"
-  version "0.6.0"
+  version "0.7.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/purpleclay/nsv/releases/download/v0.6.0/nsv_0.6.0_darwin_arm64.tar.gz"
-      sha256 "76d785e428ff7fc2d2a17c425e396539fb9cc95673777c9d60c53d37d67da6f2"
+    if Hardware::CPU.intel?
+      url "https://github.com/purpleclay/nsv/releases/download/v0.7.0/nsv_0.7.0_darwin_x86_64.tar.gz"
+      sha256 "32b88c75812b22f64e641fc754e68e167994533f8f4bc14cb7fbe0587fb11f5b"
 
       def install
         bin.install "nsv"
@@ -28,9 +28,9 @@ class Nsv < Formula
         man1.install "manpages/nsv.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/nsv/releases/download/v0.6.0/nsv_0.6.0_darwin_x86_64.tar.gz"
-      sha256 "d8c33987c64e9bc05472663a4fb2f806645d618ec9cbc71e5352e00427fc4882"
+    if Hardware::CPU.arm?
+      url "https://github.com/purpleclay/nsv/releases/download/v0.7.0/nsv_0.7.0_darwin_arm64.tar.gz"
+      sha256 "8cc1b8222104f660f4bbef92fba96efa371fb468371fb68099a4be06a277a90d"
 
       def install
         bin.install "nsv"
@@ -51,8 +51,8 @@ class Nsv < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/nsv/releases/download/v0.6.0/nsv_0.6.0_linux_x86_64.tar.gz"
-      sha256 "98800eb65447568fdbd4a427b715031419301c2010ac8edf58a0e865e51fad52"
+      url "https://github.com/purpleclay/nsv/releases/download/v0.7.0/nsv_0.7.0_linux_x86_64.tar.gz"
+      sha256 "3f6fd1631fdd4fbda4e7afe4cef3c8a2af6d6d77265fe5136e866bce21099cf8"
 
       def install
         bin.install "nsv"
@@ -70,8 +70,8 @@ class Nsv < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/purpleclay/nsv/releases/download/v0.6.0/nsv_0.6.0_linux_arm64.tar.gz"
-      sha256 "1e5f0ee422a4af6d2add921b22ede897dcaaf7ccc85808a4fe520824164bb949"
+      url "https://github.com/purpleclay/nsv/releases/download/v0.7.0/nsv_0.7.0_linux_arm64.tar.gz"
+      sha256 "9b23650321dbf5a0ee811ebad5e214f3e51122c7ffab52a790ff91d1a501b4cb"
 
       def install
         bin.install "nsv"
