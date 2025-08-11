@@ -5,13 +5,13 @@
 class Nsv < Formula
   desc "A convention-based semantic versioning tool that leans on the power of conventional commits to make versioning your software a breeze!"
   homepage "https://github.com/purpleclay/nsv"
-  version "0.12.1"
+  version "0.12.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/purpleclay/nsv/releases/download/v0.12.1/nsv_0.12.1_darwin_x86_64.tar.gz"
-      sha256 "7b571f2d67ed0d2d920f6c8c5141bc0dc33130bfba034b74c66089c1dd59893a"
+      url "https://github.com/purpleclay/nsv/releases/download/v0.12.2/nsv_0.12.2_darwin_x86_64.tar.gz"
+      sha256 "964a5157edd89bca79b2dfd61e378f168fdb2b698412355f668b3353952a932b"
 
       def install
         bin.install "nsv"
@@ -29,8 +29,8 @@ class Nsv < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/purpleclay/nsv/releases/download/v0.12.1/nsv_0.12.1_darwin_arm64.tar.gz"
-      sha256 "7f544445dd0202bf5632dd8552eef557b36e11ef2f1d687034a625d1e7d0a7a9"
+      url "https://github.com/purpleclay/nsv/releases/download/v0.12.2/nsv_0.12.2_darwin_arm64.tar.gz"
+      sha256 "7b0a9db06c268f0d4c8e88fb109caf9e2a800d3bf62fb58f0db6e834dd0a6d63"
 
       def install
         bin.install "nsv"
@@ -50,46 +50,40 @@ class Nsv < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/purpleclay/nsv/releases/download/v0.12.1/nsv_0.12.1_linux_x86_64.tar.gz"
-        sha256 "7e0be0596d7260b82b0fbbe5fbb4f02b2d2ebb7c1fec3a3bce247096c3e00284"
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/purpleclay/nsv/releases/download/v0.12.2/nsv_0.12.2_linux_x86_64.tar.gz"
+      sha256 "5e616d8b4d6e0ef5a32b67eee7b50b9e9946fb4a7dac70a8e2fd5cbdd20028cc"
+      def install
+        bin.install "nsv"
 
-        def install
-          bin.install "nsv"
+        bash_output = Utils.safe_popen_read(bin/"nsv", "completion", "bash")
+        (bash_completion/"nsv").write bash_output
 
-          bash_output = Utils.safe_popen_read(bin/"nsv", "completion", "bash")
-          (bash_completion/"nsv").write bash_output
+        zsh_output = Utils.safe_popen_read(bin/"nsv", "completion", "zsh")
+        (zsh_completion/"_nsv").write zsh_output
 
-          zsh_output = Utils.safe_popen_read(bin/"nsv", "completion", "zsh")
-          (zsh_completion/"_nsv").write zsh_output
+        fish_output = Utils.safe_popen_read(bin/"nsv", "completion", "fish")
+        (fish_completion/"nsv.fish").write fish_output
 
-          fish_output = Utils.safe_popen_read(bin/"nsv", "completion", "fish")
-          (fish_completion/"nsv.fish").write fish_output
-
-          man1.install "manpages/nsv.1.gz"
-        end
+        man1.install "manpages/nsv.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/purpleclay/nsv/releases/download/v0.12.1/nsv_0.12.1_linux_arm64.tar.gz"
-        sha256 "2ceb631efc96d8830e663592c79e4ad07a50ef646584e821f448fb278c156dd2"
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/purpleclay/nsv/releases/download/v0.12.2/nsv_0.12.2_linux_arm64.tar.gz"
+      sha256 "c0d7e0b641078d7c3fe0492d80125282389b96a99f338bf7884d54bf4c3a40b8"
+      def install
+        bin.install "nsv"
 
-        def install
-          bin.install "nsv"
+        bash_output = Utils.safe_popen_read(bin/"nsv", "completion", "bash")
+        (bash_completion/"nsv").write bash_output
 
-          bash_output = Utils.safe_popen_read(bin/"nsv", "completion", "bash")
-          (bash_completion/"nsv").write bash_output
+        zsh_output = Utils.safe_popen_read(bin/"nsv", "completion", "zsh")
+        (zsh_completion/"_nsv").write zsh_output
 
-          zsh_output = Utils.safe_popen_read(bin/"nsv", "completion", "zsh")
-          (zsh_completion/"_nsv").write zsh_output
+        fish_output = Utils.safe_popen_read(bin/"nsv", "completion", "fish")
+        (fish_completion/"nsv.fish").write fish_output
 
-          fish_output = Utils.safe_popen_read(bin/"nsv", "completion", "fish")
-          (fish_completion/"nsv.fish").write fish_output
-
-          man1.install "manpages/nsv.1.gz"
-        end
+        man1.install "manpages/nsv.1.gz"
       end
     end
   end
